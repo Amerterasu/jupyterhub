@@ -1,9 +1,9 @@
 # Configuration file for jupyterhub.
 c.Authenticator.admin_users = ['khoa le']
 
-#c.JupyterHub.api_tokens = {
-#    '79dddaf639aa4b97b5975f5b9ca32c8a': 'khoa le',
-#}
+c.JupyterHub.api_tokens = {
+    '95182c3a040b4866aa54d25e2dc265ec': 'khoa le',
+}
 #------------------------------------------------------------------------------
 # Configurable configuration
 #------------------------------------------------------------------------------
