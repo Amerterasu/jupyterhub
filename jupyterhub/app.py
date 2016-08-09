@@ -144,18 +144,18 @@ class NewToken(Application):
 
 class UpgradeDB(Application):
     """Upgrade the JupyterHub database schema."""
-    
+
     name = 'jupyterhub-upgrade-db'
     version = jupyterhub.__version__
     description = """Upgrade the JupyterHub database to the current schema.
-    
+
     Usage:
 
         jupyterhub upgrade-db
     """
     aliases = common_aliases
     classes = []
-    
+
     def start(self):
         hub = JupyterHub(parent=self)
         hub.load_config_file(hub.config_file)
@@ -200,12 +200,12 @@ class JupyterHub(Application):
         Authenticator,
         PAMAuthenticator,
     ])
-    
+
     load_groups = Dict(List(Unicode()),
         help="""Dict of 'group': ['usernames'] to load at startup.
-        
+
         This strictly *adds* groups and users to groups.
-        
+
         Loading one set of groups, then starting JupyterHub again with a different
         set will not remove users or groups from previous launches.
         That must be done through the API.
@@ -385,7 +385,7 @@ class JupyterHub(Application):
 
     api_tokens = Dict(Unicode(),
         help="""PENDING DEPRECATION: consider using service_tokens
-        
+
         Dict of token:username to be loaded into the database.
 
         Allows ahead-of-time generation of API tokens for use by externally managed services,
@@ -556,7 +556,7 @@ class JupyterHub(Application):
         Instance(logging.Handler),
         help="Extra log handlers to set on JupyterHub logger",
     ).tag(config=True)
-    
+
     statsd = Any(allow_none=False, help="The statsd client, if any. A mock will be used if we aren't using statsd")
     @default('statsd')
     def _statsd(self):
@@ -861,7 +861,7 @@ class JupyterHub(Application):
         # The whitelist set and the users in the db are now the same.
         # From this point on, any user changes should be done simultaneously
         # to the whitelist set and user db, unless the whitelist is empty (all users allowed).
-    
+
     def init_groups(self):
         """Load predefined groups into the database"""
         db = self.db
@@ -882,7 +882,7 @@ class JupyterHub(Application):
                     db.add(user)
                 group.users.append(user)
         db.commit()
-    
+
     def _add_tokens(self, token_dict, kind):
         """Add tokens for users or services to the database"""
         if kind == 'user':
