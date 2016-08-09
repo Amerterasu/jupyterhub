@@ -1,17 +1,18 @@
 import requests
+import json
 
 import requests
 api_url = 'http://127.0.0.1:8081/hub/api'
-token = "79dddaf639aa4b97b5975f5b9ca32c8a"
-pay_load = {"admin" : False}
+#probably should not upload tokens but the server has no real important data
+token = "79dd505f425d411bb994d4cbc09aec83"
+pay_load = {"admin": True}
 parameters = {"name" : 'khoa le'}
 user = '/khoa le'
 r = requests.patch(api_url + '/users' + user,
     headers={
         'Authorization': 'token %s' % token,
     },
-    params = parameters,
-    data = pay_load
+    data = json.dumps(pay_load)
 )
 r.raise_for_status()
 users = r.json()
