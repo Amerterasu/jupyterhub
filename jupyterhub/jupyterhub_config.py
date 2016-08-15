@@ -1,9 +1,8 @@
 
 # Configuration file for jupyterhub.
-c.Authenticator.admin_users = ['khoa le']
-
+c.Authenticator.admin_users = {"philliple"}
 c.JupyterHub.api_tokens = {
-    '95182c3a040b4866aa54d25e2dc265ec': 'khoa le',
+    '336e608c4ede4329bf9347e999a81b99': 'philliple',
 }
 
 
