@@ -1,12 +1,8 @@
 
 # Configuration file for jupyterhub.
-c.Authenticator.admin_users = {"philliple"}
-c.JupyterHub.api_tokens = {
-    '336e608c4ede4329bf9347e999a81b99': 'philliple',
-}
-
-
-
+c.Authenticator.admin_users = {"senorkhoa@yahoo.com"}
+c.Spawner.notebook_dir = '/'
+c.Spawner.default_url = '/tree/Users/%U'
 #------------------------------------------------------------------------------
 # Configurable configuration
 #------------------------------------------------------------------------------
@@ -87,7 +83,7 @@ c.JupyterHub.api_tokens = {
 # c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 
 # The base URL of the entire application
-# c.JupyterHub.base_url = '/'
+#c.JupyterHub.base_url = '/'
 
 # Whether to shutdown the proxy when the Hub shuts down.
 #

@@ -98,9 +98,9 @@ def main(argv):
       elif opt == '-u':
         print("Toggle new user creation off")
         newuser = False
-    #   elif opt == '-t':
-    #     print("Set Token (use admin token)")
-    #     token = arg
+      elif opt == '-t':
+        print("Set Token (use admin token)")
+        token = arg
       elif opt == '-a':
           print("Set API URL")
           api_url = arg
