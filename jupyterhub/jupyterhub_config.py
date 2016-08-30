@@ -1,8 +1,9 @@
 
 # Configuration file for jupyterhub.
-c.Authenticator.admin_users = {"senorkhoa@yahoo.com"}
+c.Authenticator.admin_users = {"philliple"}
 c.Spawner.notebook_dir = '/'
-c.Spawner.default_url = '/tree/Users/%U'
+c.Spawner.default_url = '/tree/home/%U'
+c.Spawner.home_url = '/tree/home/%U/Music'
 #------------------------------------------------------------------------------
 # Configurable configuration
 #------------------------------------------------------------------------------
@@ -50,7 +51,7 @@ c.Spawner.default_url = '/tree/Users/%U'
 # Grant admin users permission to access single-user servers.
 #
 # Users should be properly informed if this is enabled.
-# c.JupyterHub.admin_access = False
+c.JupyterHub.admin_access = True
 
 # DEPRECATED, use Authenticator.admin_users instead.
 # c.JupyterHub.admin_users = set()
@@ -83,7 +84,7 @@ c.Spawner.default_url = '/tree/Users/%U'
 # c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 
 # The base URL of the entire application
-#c.JupyterHub.base_url = '/'
+#c.JupyterHub.base_url = '/tree/home/%U'
 
 # Whether to shutdown the proxy when the Hub shuts down.
 #
